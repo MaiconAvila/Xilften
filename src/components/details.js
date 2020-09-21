@@ -4,7 +4,6 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import { Button } from '../stories/Button';
 
 import {
   actionDetails,
@@ -298,7 +297,6 @@ class Details extends Component {
           to="/"
           style={{ textDecoration: 'none' }} onClick={this.handleExit}>
           <ButtonRenderModal>Voltar</ButtonRenderModal>
-          <Button>I'm Button</Button>
         </Link>
         <Card backgroundImage={backdrop_path}>
           <BlackLayer>
