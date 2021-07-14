@@ -232,40 +232,35 @@ class Details extends Component {
 
     const apiKey = "07a910a730a2f36361bcbba38e7257a3";
 
-    const movieDetails = moviedb({
+    this.movieDetails = moviedb({
       method: "get",
       url: `/movie/${this.props.id}?api_key=${apiKey}`
     }).then(movie => {
       this.props.actionDetails( movie.data );
     });
 
-    const tvShowDetails = moviedb({
+    this.tvShowDetails = moviedb({
       method: "get",
       url: `/tv/${this.props.id}?api_key=${apiKey}`
     }).then(tvShow => {
       this.props.actionDetails( tvShow.data );
     });
 
-    const videoDetails = moviedb({
+    this.videoDetails = moviedb({
       method: 'get',
       url: `/movie/${this.props.id}/videos?api_key=${apiKey}`
     }).then((video) => {
-      // console.log(video.data)
-
-      // const newVideo = ;
-      // console.log(newVideo)
-
     this.props.actionVideoDetails( video.data.results[0].key );
     })
 
-    const imageDetails = moviedb({
+    this.imageDetails = moviedb({
       method: 'get',
       url: `/movie/${this.props.id}/images?api_key=${apiKey}`
     }).then((image) => {
     this.props.actionImageDetails( image.data.backdrops );
     })
 
-    const seasons = moviedb({
+    this.seasons = moviedb({
       method: "get",
       url: `/tv/${this.props.id}?api_key=${apiKey}`
     }).then(seasons => {

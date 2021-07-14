@@ -326,7 +326,7 @@ class App extends Component {
 
     const apiKey = '07a910a730a2f36361bcbba38e7257a3';
 
-    const movie = moviedb({
+    this.movie = moviedb({
       method: 'get',
       url: `/movie/popular?api_key=${apiKey}`,
 
@@ -344,7 +344,7 @@ class App extends Component {
       });
     });
 
-    const show = moviedb({
+    this.show = moviedb({
       method: 'get',
       url: `/tv/popular?api_key=${apiKey}`,
 

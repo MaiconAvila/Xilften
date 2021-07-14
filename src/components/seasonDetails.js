@@ -186,14 +186,14 @@ class SeasonDetails extends Component {
 
     const apiKey = "07a910a730a2f36361bcbba38e7257a3";
 
-    const seasonDetails = moviedb({
+    this.seasonDetails = moviedb({
       method: 'get',
       url: `/tv/${this.props.id}/season/${this.props.seasonNumber}?api_key=${apiKey}`
     }).then((seasonDetails) => {
       this.props.actionSeasonDetails( seasonDetails.data );
     })
 
-    const episodes = moviedb({
+    this.episodes = moviedb({
       method: 'get',
       url: `/tv/${this.props.id}/season/${this.props.seasonNumber}?api_key=${apiKey}`
     }).then((seasonDetails) => {
