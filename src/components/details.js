@@ -250,7 +250,7 @@ class Details extends Component {
       method: 'get',
       url: `/movie/${this.props.id}/videos?api_key=${apiKey}`
     }).then((video) => {
-    this.props.actionVideoDetails( video.data.results[0].key );
+      this.props.actionVideoDetails( video.data.results.length ? video.data.results[0].key : null );
     })
 
     this.imageDetails = moviedb({

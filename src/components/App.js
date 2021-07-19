@@ -356,7 +356,7 @@ class App extends Component {
           backdrop_path: `https://image.tmdb.org/t/p/w500${item.backdrop_path}`
         };
       });
-
+      
       this.props.actionTvShow({
         tvShow: tvShow
       });
